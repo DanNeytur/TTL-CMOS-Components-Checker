@@ -1,20 +1,29 @@
 # TTL-CMOS-Components-Checker
 
-Final project in BSC electrical & electronics engineering.
+Final project in BSC electrical & electronics engineering in Academic College Braude, Karmiel, Israel.
 
 last update: 31/07/22- Submission version
 
+[Demonstration video](https://youtu.be/3ToF3FLL9-4)
+
+## Images of the project
+![project](project.jpeg)
+
+### Project's Circuits
+![circuits](circuits.jpg)
+
 ## Description
 
-פרויקט זה בוצע במסגרת פרויקט גמר בתכן הנדסי במכללה אקדמית בראודה, כרמיאל.
-מטרת הפרויקט הייתה לבנות מערכת אשר תוכל לזהות ולבדוק תקינות של רכיבים לוגיים ממשפחות TTL ו-CMOS. 
+The purpose of this project was to indentify and check TTL/CMOS components (up to 20 pins) using FPGA controler.
 
-למערכת מספר דרכים שבה המשתמש מבצע אינטראקציה עמה. במערכת קיימת תושבת מיוחדת המתאימה לרכיבים באריזת DIP עד 20 רגליים, ובה המשתמש מכניס את הרכיב הנבדק (עם מנוף להכנסה והוצאה מהירה של רכיב מבלי לעקם את רגלי הרכיב). באמצעות 4 לחצנים על גבי הכרטיס פיתוח DE2, המשתמש בוחר איזה פעולות לבצע. על גבי מסך LCD שנמצא בכרטיס פיתוח מופיעות הפעולות לבחירה, רכיבים לבדיקה, ותוצאות הבדיקות. באמצעות רמקול וכרטיס קול  APR9600 מושמעות הודעות קוליות אשר הוקלטו מראש. כמו כן, נדלקות נורות LED ירוקה ואדומה אשר נמצאות גם הן על כרטיס הפיתוח, בהתאם לתוצאות הבדיקות.
+The user has a few ways to inteface with the project.
+* ZIF IC socket 20 pins- for quick and easy instert and pulling of tested components.
+* 4 push-buttons on development board- for the user to interact with the project.
+* LCD display- showing the options the user can pick, testing/indentifying results.
+* Sound module APR9600 + speaker- sounds prerecorded voice messages according to the state of the system.
+* Red & Green LEDs- lights according to testing/indentifying results
 
-עם הפעלת המערכת הודעת "ברוכים הבאים"  תושמע מהרמקול וגם תופיע על מסך הLCD. אחר כך המערכת תדרוש מהמשתמש, באמצעות הודעה קולית והודעה על המסך, לבחור איזו פעולה לבצע-בדיקת תקינות או זיהוי רכיב. 
-לאחר בחירה בפעולת הזיהוי, אם זוהה רכיב יודפס שמו על המסך, תושמע הודעה קולית על זיהוי מוצלח ותידלק נורת לד ירוקה.  אם הזיהוי נכשל, תודפס הודעה שלא זוהה רכיב, תושמע הודעה קולית ותידלק נורת לד אדומה.
-לאחר בחירה בפעולת בדיקת תקינות, המערכת תדרוש מהמשתמש לבחור רכיב לבדיקה מבין הבדיקות הקיימות במערכת, באמצעות הודעה קולית והודעה על המסך. אם תוצאת הבדיקה מראה כי הרכיב תקין, הודעת "הרכיב תקין" תושמע ותופיע על המסך, כמו כן הנורה הירוקה תידלק. אם תוצאת הבדיקה היא שהרכיב לא תקין, הודעת "הרכיב תקול" תושמע ותופיע על המסך, כמו כן הנורה האדומה תידלק. 
-אם המשתמש הכניס את הרכיב הנבדק הפוך וניסה לבצע בדיקה או זיהוי, המערכת תתריע באמצעות הודעה קולית והודעה על המסך על כך. כמו כן, כל עוד הרכיב הפוך, לא יסופק מתח לרכיב הנבדק וגם לא תבוצע בדיקה כלשהי.
+
 
 ### operating principle
 
