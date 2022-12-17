@@ -28,8 +28,6 @@ code blocks for commands
 **Dan Neytur** - [DanNeytur](https://github.com/DanNeytur)
 
 ## Acknowledgments
-
-Inspiration, code snippets, etc.
 * [LCD controller and User Logic in VHDL and Programming a FPGAs
 ](https://openlab.citytech.cuny.edu/wang-cet4805/files/2017/04/LCD-controller-and-User-Logic-in-VHDL-and-Programming-a-FPGAs_posted.pdf)
 * [LCD 16×2 Pinout, Commands, and Displaying Custom Characters](https://www.electronicsforu.com/technology-trends/learn-electronics/16x2-lcd-pinout-diagram)
