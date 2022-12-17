@@ -25,7 +25,7 @@ code blocks for commands
 ```
 ## Authors
 
-*Dan Neytur* - [DanNeytur](https://github.com/DanNeytur)
+**Dan Neytur** - [DanNeytur](https://github.com/DanNeytur)
 
 ## Acknowledgments
 
