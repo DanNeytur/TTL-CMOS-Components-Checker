@@ -1,0 +1,447 @@
+Analysis & Synthesis report for final_project
+Sun Jul 31 16:16:35 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |final_project|chip_sel:inst1|state
+  9. State Machine - |final_project|lcd_user_logic:inst5|state
+ 10. State Machine - |final_project|lcd_controller:inst|state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jul 31 16:16:34 2022           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; final_project                                   ;
+; Top-level Entity Name              ; final_project                                   ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 1,984                                           ;
+;     Total combinational functions  ; 1,975                                           ;
+;     Dedicated logic registers      ; 324                                             ;
+; Total registers                    ; 324                                             ;
+; Total pins                         ; 59                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; final_project      ; final_project      ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+---------+
+; final_project.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Dan/Braude/final project/VHDL/final_project/final_project.bdf     ;         ;
+; lcd_controller.vhd               ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/lcd_controller.vhd    ;         ;
+; lcd_user_logic.vhd               ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/lcd_user_logic.vhd    ;         ;
+; chip_sel.vhd                     ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/chip_sel.vhd          ;         ;
+; one_shot.vhd                     ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/one_shot.vhd          ;         ;
+; one_shot2.vhd                    ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/one_shot2.vhd         ;         ;
+; one_shot3.vhd                    ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/one_shot3.vhd         ;         ;
+; one_shot4.vhd                    ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/one_shot4.vhd         ;         ;
+; decoder_voice_sel.vhd            ; yes             ; User VHDL File                     ; C:/Dan/Braude/final project/VHDL/final_project/decoder_voice_sel.vhd ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 1,984 ;
+;                                             ;       ;
+; Total combinational functions               ; 1975  ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1332  ;
+;     -- 3 input functions                    ; 265   ;
+;     -- <=2 input functions                  ; 378   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 1784  ;
+;     -- arithmetic mode                      ; 191   ;
+;                                             ;       ;
+; Total registers                             ; 324   ;
+;     -- Dedicated logic registers            ; 324   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 59    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 319   ;
+; Total fan-out                               ; 7960  ;
+; Average fan-out                             ; 3.38  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                              ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
+; |final_project               ; 1975 (0)          ; 324 (0)      ; 0           ; 0            ; 0       ; 0         ; 59   ; 0            ; |final_project                         ; work         ;
+;    |chip_sel:inst1|          ; 552 (552)         ; 73 (73)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|chip_sel:inst1          ; work         ;
+;    |decoder_voice_sel:inst6| ; 43 (43)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|decoder_voice_sel:inst6 ; work         ;
+;    |lcd_controller:inst|     ; 190 (190)         ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|lcd_controller:inst     ; work         ;
+;    |lcd_user_logic:inst5|    ; 1050 (1050)       ; 69 (69)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|lcd_user_logic:inst5    ; work         ;
+;    |one_shot2:inst3|         ; 35 (35)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|one_shot2:inst3         ; work         ;
+;    |one_shot3:inst4|         ; 35 (35)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|one_shot3:inst4         ; work         ;
+;    |one_shot4:inst7|         ; 35 (35)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|one_shot4:inst7         ; work         ;
+;    |one_shot:inst2|          ; 35 (35)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |final_project|one_shot:inst2          ; work         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |final_project|chip_sel:inst1|state                                                                                                                                             ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; state.s15 ; state.s14 ; state.s13 ; state.s12 ; state.s11 ; state.s10 ; state.s9 ; state.s8 ; state.s7 ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.s0  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.s2  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.s3  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.s4  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.s5  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s6  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s7  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s8  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s9  ; 0         ; 0         ; 0         ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s10 ; 0         ; 0         ; 0         ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s11 ; 0         ; 0         ; 0         ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s12 ; 0         ; 0         ; 0         ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s13 ; 0         ; 0         ; 1         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s14 ; 0         ; 1         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s15 ; 1         ; 0         ; 0         ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |final_project|lcd_user_logic:inst5|state                                                                                                   ;
++-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name      ; state.s12 ; state.s11 ; state.s10 ; state.s9 ; state.s8 ; state.s7 ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; state.s0  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.s2  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.s3  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.s4  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.s5  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s6  ; 0         ; 0         ; 0         ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s7  ; 0         ; 0         ; 0         ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s8  ; 0         ; 0         ; 0         ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s9  ; 0         ; 0         ; 0         ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s10 ; 0         ; 0         ; 1         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s11 ; 0         ; 1         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s12 ; 1         ; 0         ; 0         ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------+
+; State Machine - |final_project|lcd_controller:inst|state                        ;
++------------------+------------+-------------+------------------+----------------+
+; Name             ; state.send ; state.ready ; state.initialize ; state.power_up ;
++------------------+------------+-------------+------------------+----------------+
+; state.power_up   ; 0          ; 0           ; 0                ; 0              ;
+; state.initialize ; 0          ; 0           ; 1                ; 1              ;
+; state.ready      ; 0          ; 1           ; 0                ; 1              ;
+; state.send       ; 1          ; 0           ; 0                ; 1              ;
++------------------+------------+-------------+------------------+----------------+
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; chip_sel:inst1|EN[10]                 ; Merged with chip_sel:inst1|EN[8]            ;
+; chip_sel:inst1|EN[8]                  ; Stuck at GND due to stuck port data_in      ;
+; lcd_user_logic:inst5|lcd_bus[7]       ; Merged with lcd_user_logic:inst5|lcd_bus[9] ;
+; chip_sel:inst1|gnd_sel[0]~reg0        ; Stuck at GND due to stuck port data_in      ;
+; chip_sel:inst1|EN[9]                  ; Merged with chip_sel:inst1|gnd_sel[3]~reg0  ;
+; lcd_user_logic:inst5|voice_sel[3]     ; Stuck at GND due to stuck port data_in      ;
+; lcd_user_logic:inst5|lcd_bus[8]       ; Stuck at GND due to stuck port data_in      ;
+; lcd_controller:inst|rw                ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 8 ;                                             ;
++---------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                          ;
++---------------------------------+---------------------------+----------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------------+---------------------------+----------------------------------------+
+; lcd_user_logic:inst5|lcd_bus[8] ; Stuck at GND              ; lcd_controller:inst|rw                 ;
+;                                 ; due to stuck port data_in ;                                        ;
++---------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 324   ;
+; Number of registers using Synchronous Clear  ; 9     ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 135   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 235   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; one_shot4:inst7|one_shot_out4              ; 37      ;
+; one_shot:inst2|one_shot_out                ; 33      ;
+; one_shot2:inst3|one_shot_out2              ; 35      ;
+; one_shot3:inst4|one_shot_out3              ; 33      ;
+; decoder_voice_sel:inst6|one_shot           ; 34      ;
+; lcd_controller:inst|busy                   ; 1       ;
+; lcd_user_logic:inst5|testing_chars_part[0] ; 23      ;
+; lcd_user_logic:inst5|iden_chars_part[0]    ; 6       ;
+; Total number of inverted registers = 8     ;         ;
++--------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |final_project|chip_sel:inst1|res_iden_out[0]   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |final_project|lcd_controller:inst|rs           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |final_project|chip_sel:inst1|chip_num[3]       ;
+; 7:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |final_project|chip_sel:inst1|cnt_iden[10]      ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |final_project|lcd_controller:inst|lcd_data[7]  ;
+; 14:1               ; 31 bits   ; 279 LEs       ; 31 LEs               ; 248 LEs                ; Yes        ; |final_project|lcd_controller:inst|clk_count[5] ;
+; 18:1               ; 26 bits   ; 312 LEs       ; 26 LEs               ; 286 LEs                ; Yes        ; |final_project|lcd_user_logic:inst5|cnt[2]      ;
+; 34:1               ; 6 bits    ; 132 LEs       ; 6 LEs                ; 126 LEs                ; Yes        ; |final_project|lcd_user_logic:inst5|char[2]     ;
+; 30:1               ; 2 bits    ; 40 LEs        ; 2 LEs                ; 38 LEs                 ; Yes        ; |final_project|lcd_user_logic:inst5|lcd_bus[9]  ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 108 LEs              ; 24 LEs                 ; Yes        ; |final_project|chip_sel:inst1|EN[17]            ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 9 LEs                ; 24 LEs                 ; Yes        ; |final_project|chip_sel:inst1|EN[6]             ;
+; 19:1               ; 3 bits    ; 36 LEs        ; 6 LEs                ; 30 LEs                 ; No         ; |final_project|lcd_user_logic:inst5|state       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:13     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Jul 31 16:16:19 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off final_project -c final_project
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file final_project.bdf
+    Info (12023): Found entity 1: final_project
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_controller.vhd
+    Info (12022): Found design unit 1: lcd_controller-controller
+    Info (12023): Found entity 1: lcd_controller
+Info (12021): Found 2 design units, including 1 entities, in source file lcd_user_logic.vhd
+    Info (12022): Found design unit 1: lcd_user_logic-behavior
+    Info (12023): Found entity 1: lcd_user_logic
+Info (12021): Found 2 design units, including 1 entities, in source file chip_sel.vhd
+    Info (12022): Found design unit 1: chip_sel-behavior
+    Info (12023): Found entity 1: chip_sel
+Info (12021): Found 2 design units, including 1 entities, in source file one_shot.vhd
+    Info (12022): Found design unit 1: one_shot-behave
+    Info (12023): Found entity 1: one_shot
+Info (12021): Found 2 design units, including 1 entities, in source file one_shot2.vhd
+    Info (12022): Found design unit 1: one_shot2-behave
+    Info (12023): Found entity 1: one_shot2
+Info (12021): Found 2 design units, including 1 entities, in source file one_shot3.vhd
+    Info (12022): Found design unit 1: one_shot3-behave
+    Info (12023): Found entity 1: one_shot3
+Info (12021): Found 2 design units, including 1 entities, in source file one_shot4.vhd
+    Info (12022): Found design unit 1: one_shot4-behave
+    Info (12023): Found entity 1: one_shot4
+Info (12021): Found 2 design units, including 1 entities, in source file decoder_voice_sel.vhd
+    Info (12022): Found design unit 1: decoder_voice_sel-behave
+    Info (12023): Found entity 1: decoder_voice_sel
+Info (12127): Elaborating entity "final_project" for the top level hierarchy
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:inst"
+Info (12128): Elaborating entity "lcd_user_logic" for hierarchy "lcd_user_logic:inst5"
+Info (12128): Elaborating entity "chip_sel" for hierarchy "chip_sel:inst1"
+Warning (10873): Using initial value X (don't care) for net "data_out[10]" at chip_sel.vhd(110)
+Warning (10873): Using initial value X (don't care) for net "data_out[8]" at chip_sel.vhd(110)
+Info (12128): Elaborating entity "one_shot4" for hierarchy "one_shot4:inst7"
+Info (12128): Elaborating entity "one_shot3" for hierarchy "one_shot3:inst4"
+Info (12128): Elaborating entity "one_shot2" for hierarchy "one_shot2:inst3"
+Info (12128): Elaborating entity "one_shot" for hierarchy "one_shot:inst2"
+Info (12128): Elaborating entity "decoder_voice_sel" for hierarchy "decoder_voice_sel:inst6"
+Warning (10492): VHDL Process Statement warning at decoder_voice_sel.vhd(30): signal "one_shot" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at decoder_voice_sel.vhd(31): signal "voice_num" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "lcd_on" is stuck at VCC
+    Warning (13410): Pin "lcd_blon" is stuck at VCC
+    Warning (13410): Pin "rw" is stuck at GND
+    Warning (13410): Pin "gnd_sel[0]" is stuck at GND
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register decoder_voice_sel:inst6|one_shot will power up to High
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 2046 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 35 output pins
+    Info (21060): Implemented 18 bidirectional pins
+    Info (21061): Implemented 1987 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4646 megabytes
+    Info: Processing ended: Sun Jul 31 16:16:35 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:15
+
+

@@ -1,0 +1,18 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ENTITY decoder_voice_sel is
+PORT( clk		: IN STD_LOGIC; 
+		voice_num: IN  INTEGER RANGE 0 TO 7;
+		lcd_bus 	: OUT STD_LOGIC_VECTOR(7 DOWNTO 0));--'0' when pushed else '1' -- LEDG4 -- PIN_U18
+END;
+
+ARCHITECTURE behave OF decoder_voice_sel IS
+SIGNAL cnt:INTEGER RANGE 0 TO 50350000;--1 sec clk=50Mhz
+BEGIN
+
+PROCESS(clk)
+
+
+END PROCESS;
+
+END behave;

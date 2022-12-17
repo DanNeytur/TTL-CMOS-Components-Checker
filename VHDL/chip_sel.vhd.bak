@@ -1,0 +1,16 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY chip_sel IS
+PORT(
+	in_sel : IN STD_LOGIC; 
+	out_sel : OUT STD_LOGIC_VECTOR(12 DOWNTO 0)); 
+END chip_sel;
+
+ARCHITECTURE behavior OF chip_sel IS
+
+BEGIN
+
+out_sel<="0001110001110" when in_sel='1' else "1110001110001";
+
+END behavior;

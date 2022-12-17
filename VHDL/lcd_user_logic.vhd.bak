@@ -1,0 +1,60 @@
+---------------------------------------------------------------------
+-----------
+ --
+ -- FileName: lcd_user_logic.vhd
+ -- Prints "123456789AB" on a HD44780 compatible 8-bit interface character LCD 
+ -- module using the lcd_controller.vhd component.
+ ---------------------------------------------------------------------- -----------
+ LIBRARY ieee;
+ USE ieee.std_logic_1164.ALL;
+ USE IEEE.STD_LOGIC_ARITH.ALL;
+ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ ENTITY lcd_user_logic IS
+ PORT(
+ lcd_busy : IN STD_LOGIC; --lcd controller busy/idle feedback
+ clk : IN STD_LOGIC; --system clock
+ lcd_clk : OUT STD_LOGIC;
+ reset_n : OUT STD_LOGIC;
+ lcd_enable : buffer STD_LOGIC; --lcd enable received from lcd controller
+ lcd_bus : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)); --data and control signals
+ --The MSB is the rs signal, followed by the rw signal.
+ -- The other 8 bits are the data bits.
+ END lcd_user_logic;
+
+ ARCHITECTURE behavior OF lcd_user_logic IS
+
+ BEGIN
+
+ PROCESS(clk)
+ VARIABLE char : INTEGER RANGE 0 TO 12 := 0;
+ BEGIN
+ IF(clk'EVENT AND clk = '1') THEN
+ IF(lcd_busy = '0' AND lcd_enable = '0') THEN
+ lcd_enable <= '1';
+ IF(char < 12) THEN
+ char := char + 1;
+ END IF;
+ CASE char IS
+ WHEN 1 => lcd_bus <= "1000110001";
+ WHEN 2 => lcd_bus <= "1000110010";
+ WHEN 3 => lcd_bus <= "1000110011";
+ WHEN 4 => lcd_bus <= "1000110100";
+ WHEN 5 => lcd_bus <= "1000110101";
+ WHEN 6 => lcd_bus <= "1000110110";
+ WHEN 7 => lcd_bus <= "1000110111";
+ WHEN 8 => lcd_bus <= "1000111000";
+ WHEN 9 => lcd_bus <= "1000111001";
+ WHEN 10 => lcd_bus<= "1001000001";
+ WHEN 11 => lcd_bus<= "1001000010";
+ WHEN OTHERS => lcd_enable <= '0';
+ END CASE;
+ ELSE
+ lcd_enable <= '0';
+ END IF;
+ END IF;
+ END PROCESS;
+
+ reset_n <= '1';
+ lcd_clk <= clk;
+ END behavior;

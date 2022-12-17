@@ -1,0 +1,29 @@
+library ieee;
+use ieee_std_logic_1164.all;
+entity one_shot is
+port(trig,clk:in bit;
+		one_shot_out:buffer bit);
+end;
+
+architecture behave of one_shot is
+signal cnt:integer range 0 to 2517500--50ms clk=50Mhz
+signal clr:bit;
+begin
+
+diff_process: process(trig,clr)
+	begin 
+	if clr='0' then one_shot_out<='1';
+	elsif trig'event and trig='0' then
+	one_shot_out<'0';
+end diff_process;
+
+counter_process: process(clk,clr)
+		begin
+		if clr='0' then cnt<=0;
+		elsif clk'event and clk='1' then
+		if one_shot_out='0' then cnt<=cnt+1; 
+		end if;
+end counter_process;
+
+clr<='0' when cnt=2517500 else '1'
+end behave;
