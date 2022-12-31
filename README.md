@@ -20,7 +20,7 @@ The project will display the component's name after identifying it, and can disp
 
 If the tested component is inserted flipped, the project will alert the user.
 
-The user has a few ways to inteface with the project.
+The user has a few ways to interface with the project.
 * ZIF IC socket 20 pins- for quick and easy instert and pulling of tested components.
 * 4 push-buttons on development board- for the user to interact with the project.
 * 16X2 LCD display- showing the options the user can pick, testing/indentifying results.
