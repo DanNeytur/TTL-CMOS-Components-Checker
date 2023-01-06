@@ -28,6 +28,7 @@ The user has a few ways to interface with the project.
 * Red & Green LEDs- lights according to testing/indentifying results
 
 The project can identify and check 8 components from 7400-series (TTL) and 6 components from 4000-series (CMOS).
+
 ![image](https://user-images.githubusercontent.com/120782729/208678000-ca01c9a6-6578-4e61-839c-b0b862f28ab1.png)
 
 ## Block diagram 
